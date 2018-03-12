@@ -27,3 +27,15 @@ void random_fill_array(int A[], int n){
   srand(time(NULL));
   for(i = 0; i < n; i++) A[i] = rand() % 20;
 }
+
+int shift_sinistra(int A[], int n, int j){
+  int i;
+  for(i = j; i < n; i++){
+    A[i] = A[i+1];
+  }
+  return n-1;
+}
+
+void elimina_elemento(int A[], int *n, int j){
+  *n = shift_sinistra(A, *n, j);
+}
