@@ -73,19 +73,26 @@
     -deleteList(l)->l'
       POST: l = <a1, a2, ..., an> AND l' = nil
 
+    -reverseList2(l)-> l',b
+      POST: l = <a1, a2, .., an> AND l' = <an, ..., a2, a1>
+
+    -inputList(n) -> l
+      POST: l = <a1, a2, ..., an>
 */
 
-typedef struct node *list;
+typedef struct c_list *list;
 
 list newList(); // x
 int emptyList(list); /*x Nonostante quanto scritto nella specifica si utilizza int come ritorno non esistendo in C un tipo "boolean"*/
-item getFirst(list); //x
-list consList(item, list); //x
-list tailList(list); //x
 int sizeList(list); //x
 int posItem(item, list); //x
 int searchItem(list, item); //x
 list reverseList(list); //x
 item getItem(list, int); //x
-list insertList(list, int, item); //
-list removeList(list, int); //x
+int insertList(list, int, item); //
+int removeList(list, int); //x
+int reverseList2(list);
+list cloneList(list);
+int deleteList(list);
+list inputList(int n);
+int outputList(list);
